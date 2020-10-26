@@ -1,4 +1,4 @@
-# Neural-Network-From-Scratch
+# Artificial Neural Network From Scratch
 An artificial neural network coded from scratch.
 
 ## Features
