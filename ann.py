@@ -6,13 +6,12 @@ class ANN:
     An artificial neural network
     """
 
-    def __init__(self, input_num, hidden_num, epoch, batches, learning_rate, momentum, dropout):
+    def __init__(self, input_num, hidden_num, epoch, batches, learning_rate, momentum):
         self.input_num = input_num  # Number of input nodes
         self.hidden_num = hidden_num    # Number of hidden nodes
         self.epoch = epoch  # Number of epochs
         self.learning_rate = learning_rate  # Learning rate
         self.momentum = momentum    # Momentum
-        self.dropout = dropout  # Dropout
         self.batches = batches   # Number of batches to split training set into
         self.weights1 = np.random.uniform(low=-1.0, high=1.0, size=(input_num, hidden_num))   # Initialize weights for layer 1
         self.weights2 = np.random.uniform(low=-1.0, high=1.0, size=(hidden_num, 1))    # Initialize weights for layer 2
@@ -61,7 +60,6 @@ class ANN:
             for b in range(self.batches):
                 # Feedforward
                 layer1 = self.sigmoid_function(self.calc_activation(layer0[b], self.weights1))
-                layer1 *= np.random.binomial([np.ones((len(layer1), self.hidden_num))], 1-self.dropout)[0] * (1.0/(1-self.dropout))
                 layer2 = self.sigmoid_function(self.calc_activation(layer1, self.weights2))
 
                 # Backpropagation
@@ -74,6 +72,4 @@ class ANN:
 
                 # Loop update
                 sum_square_error = np.sum(np.square(desired[b] - layer2))
-                if (e % np.floor(self.epoch/5)) == 0:
-                    print("Epoch:", e, "Error:", sum_square_error)
                 e += 1

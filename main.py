@@ -20,8 +20,7 @@ if __name__ == "__main__":
               epoch=10000,
               batches=6,
               learning_rate=0.0001,
-              momentum=0.7,
-              dropout=0)
+              momentum=0.7)
     ann.train(X_train, np.array([y_train]).T)
 
     # Test ANN
