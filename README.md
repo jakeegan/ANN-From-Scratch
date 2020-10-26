@@ -1,4 +1,4 @@
-# Artificial Neural Network From Scratch
+# ANN From Scratch
 An artificial neural network coded from scratch.
 
 ## Features
