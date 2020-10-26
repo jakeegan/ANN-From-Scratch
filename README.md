@@ -2,7 +2,7 @@
 An artificial neural network coded from scratch.
 
 ## Features
-Backpropagation, dropout, momentum, mini-batches, sigmoid neurons
+Backpropagation, momentum, mini-batches, sigmoid neurons
 
 ## Results
 Trained on the breast cancer wisconsin dataset.
