@@ -1,2 +1,5 @@
 # Neural-Network-From-Scratch
-A neural network with backpropagation, dropout, and momentum
+An artificial neural network coded from scratch.
+
+## Features
+backpropagation, dropout, momentum, mini-batches, sigmoid neurons
